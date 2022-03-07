@@ -1,6 +1,8 @@
 package com.example.hw82;
 
-public class CharacterPerson {
+import java.io.Serializable;
+
+public class CharacterPerson implements Serializable {
     private int image;
     private String aliveOrDead;
     private String personName;

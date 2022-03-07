@@ -10,7 +10,12 @@
         android:name="com.example.hw82.ui.CharacterFragment"
         android:label="fragment_character"
         tools:layout="@layout/fragment_character" >
+        <argument
+            android:name="characterPerson"
+            android:defaultValue="0"
+            app:argType="<integer>" />
         <action
+            app:nullable="true"
             android:id="@+id/action_character_to_detailsFragment"
             app:destination="@id/detailsFragment" />
     </fragment>

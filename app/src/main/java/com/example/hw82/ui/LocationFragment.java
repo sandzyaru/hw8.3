@@ -36,12 +36,12 @@ public class LocationFragment extends Fragment {
         LoadData();
         LocationAdapter adapter=new LocationAdapter(locationDetails);
         binding.recyclerLocation.setAdapter(adapter);
-        binding.bottomNavigation.findViewById(R.id.character).setOnClickListener(new View.OnClickListener() {
+     /*   binding.bottomNavigation.findViewById(R.id.character).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(LocationFragment.this).navigate(R.id.action_location_to_character);
             }
-        });
+        });*/
     }
 
     private void LoadData() {

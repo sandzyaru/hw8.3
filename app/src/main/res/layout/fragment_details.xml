@@ -32,6 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/background"
         tools:src="@drawable/ic_rick" />
     <TextView
+        android:elevation="40dp"
         app:layout_constraintEnd_toEndOf="@+id/person_details"
         app:layout_constraintStart_toStartOf="@+id/person_details"
         app:layout_constraintTop_toBottomOf="@+id/person_details"
