@@ -1,5 +1,6 @@
 package com.example.hw82;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,11 @@ import java.util.ArrayList;
 
 public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder> {
     private ArrayList<CharacterPerson> characters;
+    private  OnClick onClick;
 
-    public CharacterAdapter(ArrayList<CharacterPerson> characterPeople) {
+    public CharacterAdapter(ArrayList<CharacterPerson> characterPeople, OnClick onClick) {
         characters=characterPeople;
+        this.onClick=onClick;
     }
 
     @NonNull
@@ -26,8 +29,14 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CharacterViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CharacterViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.bind(characters.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClick.onClick(characters.get(position));
+            }
+        });
     }
 
     @Override

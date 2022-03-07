@@ -10,12 +10,9 @@
         android:name="com.example.hw82.ui.CharacterFragment"
         android:label="fragment_character"
         tools:layout="@layout/fragment_character" >
-        <argument
-            android:name="characterPerson"
-            android:defaultValue="0"
-            app:argType="<integer>" />
+
+
         <action
-            app:nullable="true"
             android:id="@+id/action_character_to_detailsFragment"
             app:destination="@id/detailsFragment" />
     </fragment>
@@ -24,13 +21,19 @@
         android:name="com.example.hw82.ui.LocationFragment"
         android:label="fragment_location"
         tools:layout="@layout/fragment_location" >
+
         <action
-            android:id="@+id/action_location_to_character"
-            app:destination="@id/character" />
+            android:id="@+id/action_location_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.hw82.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="characterPerson"
+            app:argType="com.example.hw82.CharacterPerson" />
+
+    </fragment>
 </navigation>

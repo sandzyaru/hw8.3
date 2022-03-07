@@ -6,6 +6,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DetailsFragment">
     <TextView
+        app:layout_constraintEnd_toEndOf="@+id/person_details"
+        app:layout_constraintStart_toStartOf="@+id/person_details"
+        app:layout_constraintTop_toBottomOf="@+id/person_details"
+        android:background="@drawable/your_rounded_shape"
+        android:layout_width="0dp"
+        android:layout_height="100dp"/>
+    <TextView
         android:id="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,14 +38,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/background"
         tools:src="@drawable/ic_rick" />
-    <TextView
-        android:elevation="40dp"
-        app:layout_constraintEnd_toEndOf="@+id/person_details"
-        app:layout_constraintStart_toStartOf="@+id/person_details"
-        app:layout_constraintTop_toBottomOf="@+id/person_details"
-        android:background="@drawable/your_rounded_shape"
-        android:layout_width="0dp"
-        android:layout_height="100dp"/>
     <TextView
         android:textSize="15sp"
         android:id="@+id/alive_or_dead"

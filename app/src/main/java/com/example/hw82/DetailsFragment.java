@@ -29,9 +29,9 @@ public class DetailsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-       NavArgument argument=DetailsFragmentArgs.fromBundle(getArguments());
-        if(argument!=null){
-            String aliveAndDead=DetailsFragmentArgs.fromBundle(getArguments());
-        }
+        CharacterPerson characterPerson=DetailsFragmentArgs.fromBundle(getArguments()).getCharacterPerson();
+        binding.personDetails.setImageResource(characterPerson.getImage());
+        binding.aliveOrDead.setText(characterPerson.getAliveOrDead());
+        binding.personName.setText(characterPerson.getPersonName());
     }
 }

@@ -14,13 +14,14 @@ import android.view.ViewGroup;
 
 import com.example.hw82.CharacterAdapter;
 import com.example.hw82.CharacterPerson;
+import com.example.hw82.OnClick;
 import com.example.hw82.R;
 import com.example.hw82.databinding.FragmentCharacterBinding;
 
 import java.util.ArrayList;
 
 
-public class CharacterFragment extends Fragment {
+public class CharacterFragment extends Fragment implements OnClick {
     private FragmentCharacterBinding binding;
     private ArrayList<CharacterPerson> characterPeople;
 
@@ -36,11 +37,10 @@ public class CharacterFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         LoadData();
-        CharacterAdapter adapter= new CharacterAdapter(characterPeople);
+        CharacterAdapter adapter= new CharacterAdapter(characterPeople,this::onClick);
         binding.recyclerCharacter.setAdapter(adapter);
 
-        @NonNull NavDirections action=CharacterFragmentDirections.actionCharacterToDetailsFragment();
-        NavHostFragment.findNavController(CharacterFragment.this).navigate(action);
+
     }
 
     private void LoadData() {
@@ -49,5 +49,11 @@ public class CharacterFragment extends Fragment {
         characterPeople.add(new CharacterPerson(R.drawable.ic_morty,"Alive","Morty Smith"));
         characterPeople.add(new CharacterPerson(R.drawable.ic_albert,"Dead","Albert Einstein"));
         characterPeople.add(new CharacterPerson(R.drawable.ic_jerry,"Alive","Jerry Smith"));
+    }
+
+    @Override
+    public void onClick(CharacterPerson characterPerson) {
+        @NonNull NavDirections action=CharacterFragmentDirections.actionCharacterToDetailsFragment(characterPerson);
+        NavHostFragment.findNavController(CharacterFragment.this).navigate(action);
     }
 }
