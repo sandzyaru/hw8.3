@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DetailsFragment">
+    <TextView
+        android:id="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"/>
+    <TextView
+        android:layout_marginStart="20dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:text="Details"
+        app:layout_constraintStart_toStartOf="@+id/background"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintTop_toTopOf="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/person_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background"
+        tools:src="@drawable/ic_rick" />
+    <TextView
+        app:layout_constraintEnd_toEndOf="@+id/person_details"
+        app:layout_constraintStart_toStartOf="@+id/person_details"
+        app:layout_constraintTop_toBottomOf="@+id/person_details"
+        android:background="@drawable/your_rounded_shape"
+        android:layout_width="0dp"
+        android:layout_height="100dp"/>
+    <TextView
+        android:textSize="15sp"
+        android:id="@+id/alive_or_dead"
+        tools:text="Alive"
+        app:layout_constraintEnd_toEndOf="@+id/person_details"
+        app:layout_constraintStart_toStartOf="@+id/person_details"
+        app:layout_constraintTop_toBottomOf="@+id/person_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="25sp"
+        android:id="@+id/person_name"
+        android:textColor="@color/black"
+        tools:text="Rick"
+        app:layout_constraintEnd_toEndOf="@+id/alive_or_dead"
+        app:layout_constraintStart_toStartOf="@+id/alive_or_dead"
+        app:layout_constraintTop_toBottomOf="@+id/alive_or_dead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

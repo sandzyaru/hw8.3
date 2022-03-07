@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<ImageView
+    android:id="@+id/person"
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:src="@drawable/ic_rick"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+    <TextView
+        app:layout_constraintBottom_toBottomOf="@+id/person_name"
+        app:layout_constraintEnd_toEndOf="@+id/person"
+        app:layout_constraintStart_toStartOf="@+id/person"
+        app:layout_constraintTop_toBottomOf="@+id/person"
+        android:background="@drawable/your_rounded_shape"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+    <TextView
+        android:id="@+id/alive_or_dead"
+        tools:text=""
+        app:layout_constraintEnd_toEndOf="@+id/person"
+        app:layout_constraintStart_toStartOf="@+id/person"
+        app:layout_constraintTop_toBottomOf="@+id/person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/person_name"
+        android:textColor="@color/black"
+        tools:text=""
+        app:layout_constraintEnd_toEndOf="@+id/alive_or_dead"
+        app:layout_constraintStart_toStartOf="@+id/alive_or_dead"
+        app:layout_constraintTop_toBottomOf="@+id/alive_or_dead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
